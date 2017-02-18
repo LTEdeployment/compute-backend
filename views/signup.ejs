@@ -1,0 +1,28 @@
+<%- include('header') %>
+
+<div class="ui grid">
+  <div class="four wide column"></div>
+  <div class="eight wide column">
+    <form class="ui form segment" method="post">
+      <div class="field">
+        <label>邮箱</label>
+        <input placeholder="邮箱" type="text" name="email">
+      </div>
+      <div class="field">
+        <label>密码</label>
+        <input placeholder="密码" type="password" name="password">
+      </div>
+      <div class="field">
+        <label>重复密码</label>
+        <input placeholder="重复密码" type="password" name="repassword">
+      </div>
+      <div class="field required">
+        <label>个人简介</label>
+        <textarea name="bio" rows="5" v-model="user.bio"></textarea>
+      </div>
+      <input type="submit" class="ui button fluid" value="注册">
+    </div>
+  </form>
+</div>
+
+<%- include('footer') %>
