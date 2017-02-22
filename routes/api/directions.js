@@ -15,7 +15,9 @@ const storage = multer.diskStorage({
   }
 })
 
-const upload = multer({ storage })
+const upload = multer({
+  storage
+})
 
 router.get('/id/:id', check.checkLogin, function (req, res, next) {
   let id = req.params.id
@@ -69,6 +71,10 @@ router.get('/amount', check.checkLogin, function (req, res, next) {
     .catch(function (e) {
       next(e)
     })
+})
+
+router.post('/test', check.checkNotLogin, function (req, res, next) {
+  return res.renderJSON('ok', req.body.data)
 })
 
 router.post('/create', check.checkLogin, upload.single('direction'), function (req, res, next) {
