@@ -6,7 +6,10 @@
     "key": "compute_key",
     "maxAge": 2592000000
   },
-  "white_origins": ["http://localhost:8080", "http://compute.xhinliang.com", "http://computedev.webdev.com", "http://compute.webdev.com"],
+  "white_origins": [
+    "http://localhost:8080", "http://ltedeployment.github.io", "https://ltedeployment.github.io",
+    "http://compute.xhinliang.com", "http://computedev.webdev.com", "http://compute.webdev.com"
+  ],
   "redis_mat_directions_queue": "directions_task_queue",
   "redis_task_lte_queue": "redis_task_lte_queue",
   "queue_empty_sleep_time": 5,
