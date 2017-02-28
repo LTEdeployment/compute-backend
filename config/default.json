@@ -8,7 +8,9 @@
   },
   "white_origins": [
     "http://localhost:8080", "http://ltedeployment.github.io", "https://ltedeployment.github.io",
-    "http://compute.xhinliang.com", "http://computedev.webdev.com", "http://compute.webdev.com"
+    "http://compute.xhinliang.com", "http://computedev.webdev.com", "http://compute.webdev.com",
+    "https://localhost:8080", "https://ltedeployment.github.io", "https://ltedeployment.github.io",
+    "https://compute.xhinliang.com", "https://computedev.webdev.com", "https://compute.webdev.com"
   ],
   "redis_mat_directions_queue": "directions_task_queue",
   "redis_task_lte_queue": "redis_task_lte_queue",
