@@ -1,6 +1,6 @@
 {
   "DEBUG_ENV": true,
-  "port": 8081,
+  "port": 9090,
   "session": {
     "secret": "compute_secret",
     "key": "compute_key",
