@@ -32,6 +32,20 @@ router.get('/id/:id', check.checkLogin, function (req, res, next) {
     })
 })
 
+router.get('/name/:name', check.checkLogin, function (req, res, next) {
+  let name = req.params.name
+
+  DirectionModel
+    .getDirectionByName(name)
+    .then(function (result) {
+      res.setHeader('Cache-Control', 'public, max-age=8640000')
+      res.renderJSON('ok', result)
+    })
+    .catch(function (e) {
+      next(e)
+    })
+})
+
 // 分页展示方向图，每页 5 个
 router.get('/list/:page', check.checkLogin, function (req, res, next) {
   let author = req.session.user.email
@@ -41,6 +55,21 @@ router.get('/list/:page', check.checkLogin, function (req, res, next) {
     .getDirections(author, 5, page)
     .then(function (result) {
       res.send(JSON.stringify(result))
+    })
+    .catch(function (e) {
+      return next(e)
+    })
+})
+
+// 分页展示方向图的名字，每页 5 个
+router.get('/listname/:page', check.checkLogin, function (req, res, next) {
+  let author = req.session.user.email
+  let page = req.params.page
+
+  DirectionModel
+    .getDirectionNames(author, 5, page)
+    .then(function (result) {
+      res.renderJSON('ok', result)
     })
     .catch(function (e) {
       return next(e)

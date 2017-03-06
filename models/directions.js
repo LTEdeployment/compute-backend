@@ -53,6 +53,30 @@ pub.getDirections = function (author, limit, page) {
     .exec()
 }
 
+pub.getDirectionNames = function (author, limit, page) {
+  var query = {}
+  if (author) {
+    query.author = author
+  }
+  return Direction
+    .find(query)
+    .fields({
+      name: 1,
+      description: 1
+    })
+    .skip((page - 1) * limit)
+    .limit(limit)
+    .populate({
+      path: 'author',
+      model: 'User'
+    })
+    .sort({
+      _id: -1
+    })
+    .addCreatedAt()
+    .exec()
+}
+
 pub.getAllNames = function (author) {
   var query = {
     finished: true
@@ -65,6 +89,10 @@ pub.getAllNames = function (author) {
     .fields({
       name: 1,
       description: 1
+    })
+    .populate({
+      path: 'author',
+      model: 'User'
     })
     .sort({
       _id: -1

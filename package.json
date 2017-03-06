@@ -6,6 +6,7 @@
   "scripts": {
     "test": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha",
     "start": "NODE_ENV=prod pm2 start index.js --node-args='--harmony' --name 'compute'",
+    "deploy": "git add . && git commit -m 'build' && git push deploy master",
     "dev": "NODE_ENV=dev supervisor index.js",
     "prod": "NODE_ENV=prod supervisor index.js"
   },

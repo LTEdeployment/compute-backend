@@ -5,4 +5,4 @@ RUN npm install
 ENV NODE_ENV=prod NODE_CONFIG_BASEDIR=/configs NODE_CONFIG_DIR=compute-backend
 
 CMD ["node", "index.js"]
-EXPOSE 9090
+EXPOSE 8081
