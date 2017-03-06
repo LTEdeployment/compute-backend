@@ -14,3 +14,7 @@ remote: [32mPOD [39m[33mcompute-backend[39m stopped.[K
 remote: [32mPOD [39m[33mcompute-backend[39m running on unknown port[K
 To xhinliang@115.159.85.182:/home/xhinliang/repos/compute-backend.git
    e6fb9f9..f6600cc  master -> master
+
+> compute@1.0.0 deploy /home/xhinliang/code/interference-compute/backend
+> git add . && git commit -m 'build' && git push deploy master
+
