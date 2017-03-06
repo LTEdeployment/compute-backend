@@ -39,7 +39,7 @@ router.get('/name/:name', check.checkLogin, function (req, res, next) {
     .getDirectionByName(name)
     .then(function (result) {
       if (result.finished) {
-        res.setHeader('Cache-Control', 'public, max-age=8640000')
+        res.setHeader('Cache-Control', 'private, max-age=8640000')
       }
       res.renderJSON('ok', result)
     })
