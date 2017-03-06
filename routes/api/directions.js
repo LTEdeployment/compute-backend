@@ -38,7 +38,9 @@ router.get('/name/:name', check.checkLogin, function (req, res, next) {
   DirectionModel
     .getDirectionByName(name)
     .then(function (result) {
-      res.setHeader('Cache-Control', 'public, max-age=8640000')
+      if (result.finished) {
+        res.setHeader('Cache-Control', 'public, max-age=8640000')
+      }
       res.renderJSON('ok', result)
     })
     .catch(function (e) {
