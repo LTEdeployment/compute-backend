@@ -1,0 +1,4 @@
+
+> compute@1.0.0 deploy /home/xhinliang/code/interference-compute/backend
+> git add . && git commit -m 'build' && git push deploy master
+

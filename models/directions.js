@@ -62,7 +62,8 @@ pub.getDirectionNames = function (author, limit, page) {
     .find(query)
     .fields({
       name: 1,
-      description: 1
+      description: 1,
+      finished: 1
     })
     .skip((page - 1) * limit)
     .limit(limit)
