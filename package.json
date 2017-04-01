@@ -8,13 +8,14 @@
     "start": "NODE_ENV=prod pm2 start index.js --node-args='--harmony' --name 'compute'",
     "deploy": "git add . && git commit -m 'build' && git push deploy master",
     "dev": "NODE_ENV=dev supervisor index.js",
-    "prod": "NODE_ENV=prod supervisor index.js"
+    "prod": "NODE_ENV=prod supervisor index.js",
+    "docker-build": "docker build -t lte-compute/compute-backend .",
+    "docker-run": "docker run -p 8081:8081 -d lte-compute/compute-backend"
   },
   "author": "xhinliang",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.15.2",
-    "config-lite": "1.5.0",
     "connect-flash": "0.1.1",
     "connect-mongo": "1.3.2",
     "ejs": "2.5.2",
