@@ -2,15 +2,9 @@
 # -*- coding: utf-8 -*-
 import time, json
 import scipy.io as scio
-from logbook import Logger, TimedRotatingFileHandler
 from config import config
 from redis_client import redis_client
 from mongo_client import direction_collections
-
-logger = Logger('matdaemon')
-handler = TimedRotatingFileHandler('/tmp/logs', date_format="%Y%m%d")
-# logger.handlers.append(handler)
-handler.push_application()
 
 def read_mat(file_path):
     data = scio.loadmat(file_path)
@@ -34,7 +28,6 @@ def handle_task(directions_task):
 def log_print(message):
     if config['DEBUG_ENV']:
         print(message)
-    logger.info(message)
 
 # loop
 while(True):
