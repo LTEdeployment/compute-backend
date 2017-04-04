@@ -9,13 +9,12 @@ RUN pip install -i http://mirrors.aliyun.com/pypi/simple redis
 RUN pip install -i http://mirrors.aliyun.com/pypi/simple pymongo
 
 ADD . /app
-ADD config /config
 WORKDIR /app
 RUN npm install
 ADD uploads /tmp/uploads
 
 ENV NODE_ENV=prod
-ENV CONFIG_BASEDIR=/
-ENV CONFIG_DIR=config
+ENV CONFIG_BASEDIR=/configs
+ENV CONFIG_DIR=compute-backend
 CMD ["/usr/bin/supervisord"]
 EXPOSE 8081
