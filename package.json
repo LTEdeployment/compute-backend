@@ -11,7 +11,7 @@
     "prod": "NODE_ENV=prod supervisor index.js",
     "docker-build": "docker build -t lte-compute/compute-backend .",
     "docker-run": "docker run -p 8081:8081 -d lte-compute/compute-backend",
-    "docker-bash": "docker run -t -i lte-compute/compute-backend bash"
+    "docker-bash": "docker run -p 8081:8081 --rm -t -i lte-compute/compute-backend bash"
   },
   "author": "xhinliang",
   "license": "MIT",
