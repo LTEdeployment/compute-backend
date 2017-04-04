@@ -14,7 +14,7 @@ def read_mat(file_path):
     return False
 
 def handle_task(directions_task):
-    file_path = '../uploads/' + directions_task['file']['filename']
+    file_path = '/tmp/uploads/' + directions_task['file']['filename']
     directions = read_mat(file_path)
     direction = direction_collections.find_one({'name': directions_task['name']})
     if direction == None:
@@ -23,7 +23,7 @@ def handle_task(directions_task):
     direction['data'] = directions.tolist()
     direction['finished'] = True
     direction_collections.save(direction)
-    log_print('direction update: %s' % directions_task['name'])
+    log_print('direction update: %s' % directions_task['name'].encode('utf-8'))
 
 def log_print(message):
     if config['DEBUG_ENV']:
@@ -31,8 +31,8 @@ def log_print(message):
 
 # loop
 while(True):
-    task = redis_client.rpop(config['redis_mat_directions_queue'])
-    # task = redis_client.lindex(config['redis_mat_directions_queue'], 0)
+    # task = redis_client.rpop(config['redis_mat_directions_queue'])
+    task = redis_client.lindex(config['redis_mat_directions_queue'], 0)
     if not task:
         log_print('queue is empty')
         if config['DEBUG_ENV']:
