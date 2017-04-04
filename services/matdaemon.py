@@ -31,8 +31,8 @@ def log_print(message):
 
 # loop
 while(True):
-    # task = redis_client.rpop(config['redis_mat_directions_queue'])
-    task = redis_client.lindex(config['redis_mat_directions_queue'], 0)
+    task = redis_client.rpop(config['redis_mat_directions_queue'])
+    # task = redis_client.lindex(config['redis_mat_directions_queue'], 0)
     if not task:
         log_print('queue is empty')
         if config['DEBUG_ENV']:

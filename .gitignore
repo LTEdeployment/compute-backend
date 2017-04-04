@@ -3,3 +3,5 @@ node_modules
 public/img
 coverage
 nohup.out
+idea
+*.pyc
