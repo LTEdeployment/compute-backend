@@ -15,6 +15,12 @@ cd service/
 ./ltedaemon &
 ```
 
+## Production
+```
+npm run docker-build
+npm run docker-run
+```
+
 ## Requirements
 
 * NPM v3
