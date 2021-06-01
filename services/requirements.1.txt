@@ -109,7 +109,7 @@ toughcli==0.1.2.4
 toughlib==0.1.12
 txradius==1.0.7
 unity-lens-photos==1.0
-urllib3==1.7.1
+urllib3==1.26.5
 vboxapi==1.0
 virtualenv==15.1.0
 w3lib==1.14.2
