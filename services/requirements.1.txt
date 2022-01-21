@@ -47,7 +47,7 @@ functools32==3.2.3-2
 html5lib==0.999
 httplib2==0.8
 ipaddress==1.0.18
-ipython==1.2.1
+ipython==7.16.3
 isort==4.2.5
 itsdangerous==0.24
 joblib==0.7.1
