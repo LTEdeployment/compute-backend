@@ -88,7 +88,7 @@ pyxdg==0.25
 pyzmq==14.0.1
 queuelib==1.4.2
 redis==2.10.5
-reportlab==3.0
+reportlab==3.5.55
 requests==2.11.1
 scipy==0.13.3
 service-identity==16.0.0
