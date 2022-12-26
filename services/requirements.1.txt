@@ -114,7 +114,7 @@ vboxapi==1.0
 virtualenv==15.1.0
 w3lib==1.14.2
 websocket-client==0.40.0
-wheel==0.24.0
+wheel==0.38.1
 wrapt==1.10.8
 wsgiref==0.1.2
 xart==0.1.8
